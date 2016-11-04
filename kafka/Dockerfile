@@ -2,7 +2,7 @@ FROM java:openjdk-8-jre
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV SCALA_VERSION 2.11
-ENV KAFKA_VERSION 0.8.2.1
+ENV KAFKA_VERSION 0.10.1.0
 ENV KAFKA_HOME /opt/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION"
 
 RUN apt-get update && apt-get install -y \
@@ -23,4 +23,4 @@ RUN chmod 777 /opt/kafka_"$SCALA_VERSION"-"$KAFKA_VERSION"/config/server.propert
 
 EXPOSE 9092
 
-CMD ["/opt/kafka_2.11-0.8.2.1/bin/kafka-server-start.sh", "/opt/kafka_2.11-0.8.2.1/config/server.properties"]
+CMD ["/opt/kafka_2.11-0.10.1.0/bin/kafka-server-start.sh", "/opt/kafka_2.11-0.10.1.0/config/server.properties"]
